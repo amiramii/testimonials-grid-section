@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.first > img{
+    display: block;
+    width: 20%;
+    z-index: 2;
+    position: absolute;
+    right: 5rem;
+    top: 0;
+}
+:root{
+    --bg-color:hsl(0, 0%, 81%);
+    --first-user-bg:hsl(263, 55%, 52%);
+    --sec-user-bg:hsl(217, 19%, 35%);
+    --third-fifth-user-bg:hsl(0, 0%, 100%);
+    --fourth-user-bg:hsl(219, 29%, 14%);
+    --Grey-400: hsl(224, 10%, 45%);
+    --Grey-200: hsl(0, 0%, 81%);
+    --Grey-100: hsl(214, 17%, 92%);
+    --Purple-300: hsl(264, 82%, 80%);
+    --Purple-50: hsl(260, 100%, 95%);
+
+}
+body{
+    font-family: 'Barlow Semi Condensed',system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    min-height: 100vh;
+
+}
+.container{
+    width: 90%;
+    display: grid;
+    grid-template-rows: repeat(5,auto);
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+    place-content: center;
+    place-items: center;
+    row-gap: 2rem;
+}
+.user{
+    padding: 3rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.first{
+    background-color: var(--first-user-bg);
+    color: var(--third-fifth-user-bg);
+    position: relative;
+    z-index: 1;
+}
+.second{
+    background-color: var(--sec-user-bg);
+    color: var(--third-fifth-user-bg);
+}
+.third{
+    background-color: var(--third-fifth-user-bg);
+    color: var(--sec-user-bg);
+}
+.fourth{
+    background-color: var(--fourth-user-bg);
+    color: var(--third-fifth-user-bg);
+}
+.fifth{
+    background-color: var(--third-fifth-user-bg);
+    color: var(--sec-user-bg);
+}
+section > img{
+    border-radius: 50%;
+}
+.first-user-overview,
+.second-user-overview,
+.third-user-overview,
+.fourth-user-overview,
+.fifth-user-overview{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.fifth-user-state,.second-user-state{
+    color: var(--Grey-200);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.first-user-info img{
+    border: 3px solid var(--Purple-300);
+}
+.first-user-overview{
+    z-index: 3;
+}
+.first-user-info {
+    z-index: 3;
+}
+.fourth-user-info img{
+    border: 3px solid var(--first-user-bg);
+}
+.info{
+    display: flex;
+    gap: 1rem;
+}
+.fifth-user-experience,.third-user-experience{
+    font-size: 1.2rem;
+    color: var(--Grey-400);
+}
+.fourth-user-experience{
+    font-size: 1.2rem;
+}
+.fourth{
+    color: var(--Grey-200);
+}
+.second-user-experience{
+    font-size: 1.2rem;
+    color: var(--Grey-200);
+}
+.first-user-experience{
+    font-size: 1.2rem;
+    color: var(--Purple-50);
+    
+}
+.third-user-state{
+    font-size: 1rem;
+    color: var(--Grey-400);
+    font-weight: 400;
+}
+.first-user-state{
+    font-size: 1rem;
+    color: var(--Purple-50);
+    font-weight: 400;
+}
+.fourth-user-state{
+    font-size: 1rem;
+    font-weight: 400;
+}
+@media screen and (min-width:40rem){
+    .container{
+        grid-template-rows: repeat(4,max-content);
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "first first"
+        "second third"
+        "fifth fifth"
+        "fourth fourth";
+        gap: 1.5rem;
+        width: 90%;
+        place-items: stretch;
+        margin: auto;
+        
+    }
+    .first{
+        grid-area: first;
+    }
+    .second{
+        grid-area:second;
+    }
+    .third{
+        grid-area: third;
+    }
+    .fourth{
+        grid-area: fourth;
+    }
+    .fifth{
+        grid-area: fifth;
+    }
+}
+@media screen and (min-width:48rem) {
+    .container{
+        grid-template-rows: repeat(4,max-content);
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: 
+        "first first"
+        "second fifth"
+        "third fifth"
+        "fourth fourth";
+        gap: 1.5rem;
+        width: 90%;
+        place-items: stretch;
+        margin: auto;
+        
+    }
+    .user{
+        padding: 1.5rem;
+    }
+}
+@media screen and (min-width:68rem) {
+    .container{
+        width: unset;
+        min-width: 90%;
+        grid-template-rows: repeat(3,max-content);
+        grid-template-columns: repeat(3,1fr);
+        grid-template-areas: 
+        "first first second"
+        "fifth fifth fifth"
+        "third fourth fourth";
+        gap: 1.5rem;
+        width: 80%;
+        
+    }
+}
+@media screen and (min-width:80rem) {
+    .container{
+        grid-template-rows: repeat(2,max-content);
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: 
+        "first first second fifth"
+        "third fourth fourth fifth";
+    }
+}
